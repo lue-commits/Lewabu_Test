@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var textLabel: String = "Hello"
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-            button("Hello")
-            
+            button(textLabel){
+                if textLabel == "Hello"{
+                    textLabel = "Bye"
+                }else {
+                    textLabel = "Hello"
+                }
+            }
+
         }
         .padding()
     }
